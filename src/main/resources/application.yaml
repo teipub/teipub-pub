@@ -1,0 +1,9 @@
+server:
+  undertow:
+    accesslog:
+      enabled: true
+
+spring:
+  thymeleaf:
+    cache: false
+
