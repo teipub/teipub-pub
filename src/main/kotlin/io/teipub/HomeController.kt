@@ -32,7 +32,7 @@ class HomeController {
         post.createdAt = Calendar.getInstance()
         postRepository.save(post)
 
-        mav.addObject("total", postRepository.count())
+        mav.addObject("total", postRepository.count() * postRepository.count())
 
         return mav
     }
