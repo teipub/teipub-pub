@@ -4,8 +4,10 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class TeipubPubApplication
-
-fun main(args: Array<String>) {
-    SpringApplication.run(TeipubPubApplication::class.java, *args)
+open class TeipubPubApplication {
+    companion object {
+        @JvmStatic fun main(args: Array<String>) {
+            SpringApplication.run(TeipubPubApplication::class.java, *args)
+        }
+    }
 }
