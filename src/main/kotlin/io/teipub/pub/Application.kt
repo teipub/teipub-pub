@@ -1,4 +1,4 @@
-package io.teipub
+package io.teipub.pub
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

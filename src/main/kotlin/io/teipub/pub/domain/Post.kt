@@ -1,4 +1,4 @@
-package io.teipub.domain
+package io.teipub.pub.domain
 
 import java.util.*
 import javax.persistence.Entity

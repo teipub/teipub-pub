@@ -1,4 +1,4 @@
-package io.teipub
+package io.teipub.pub
 
 import org.springframework.data.querydsl.QueryDslPredicateExecutor
 import org.springframework.data.repository.CrudRepository

@@ -1,6 +1,6 @@
-package io.teipub
+package io.teipub.pub
 
-import io.teipub.domain.Post
+import io.teipub.pub.domain.Post
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping

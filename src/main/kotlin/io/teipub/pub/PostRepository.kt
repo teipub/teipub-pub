@@ -1,6 +1,6 @@
-package io.teipub
+package io.teipub.pub
 
-import io.teipub.domain.Post
+import io.teipub.pub.domain.Post
 
 /**
  * Created by tei on 17. 3. 3.
