@@ -2,6 +2,7 @@ buildscript {
     ext {
         kotlinVersion = '1.1.0'
         springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+        querydslVersion = '4.1.4'
     }
     repositories {
         mavenCentral()
@@ -45,7 +46,7 @@ repositories {
     maven { url "https://repo.spring.io/milestone" }
 }
 
-configurations {
+configurations {1
     providedRuntime
 }
 
@@ -66,9 +67,9 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
     compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-    compile("com.querydsl:querydsl-jpa:4.1.4")
+    compile("com.querydsl:querydsl-jpa:${querydslVersion}")
 
-    kapt 'com.querydsl:querydsl-apt:4.1.4:jpa'
+    kapt "com.querydsl:querydsl-apt:${querydslVersion}:jpa"
 
     runtime('org.springframework.boot:spring-boot-devtools')
     runtime('com.h2database:h2')
