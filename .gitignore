@@ -2,6 +2,7 @@
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 /logs
+frontend/node_modules
 pub.mv.db
 pub.trace.db
 
