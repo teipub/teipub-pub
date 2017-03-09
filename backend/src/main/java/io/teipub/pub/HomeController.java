@@ -1,5 +1,6 @@
 package io.teipub.pub;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,12 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
  * mac-sys.co.kr
  * roryalroad.co.kr
  */
-@RestController
+@Controller
 public class HomeController {
-
     @GetMapping("/")
     public String home() {
 
-        return "Home";
+        return "home";
     }
 }
