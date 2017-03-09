@@ -1,0 +1,37 @@
+plugins {
+  id 'com.moowork.node' version '1.1.1'
+}
+
+apply plugin: 'java'
+apply plugin: 'com.moowork.node'
+
+node {
+  version = '6.10.0'
+  npmVersion = '3.10.10'
+  download = true
+}
+
+def jsBuildDir = project.buildDir.absolutePath + '/dist'
+
+jar {
+  from jsBuildDir
+  eachFile { details ->
+    details.path = details.path.startsWith('META-INF') ?: 'static/'+details.path
+  }
+  // Jar contains duplicate empty folders, see Gradle issue:
+  // http://issues.gradle.org/browse/GRADLE-1830
+  // so we need to set includeEmptyDirs to false
+  includeEmptyDirs = false
+
+}
+
+task npmBuild(dependsOn: npmInstall, type: NpmTask) {
+//  "run ng build".execute()
+//  inputs.file 'ng'
+//  outputs.dir jsBuildDir
+//  workingDir = project.buildDir.absolutePaths
+  args = ["run", "ng", "build"]
+//  args = ["run", "build"]
+}
+
+jar.dependsOn npmBuild
