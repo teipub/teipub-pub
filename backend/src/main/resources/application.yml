@@ -1,0 +1,4 @@
+server:
+  undertow:
+    accesslog:
+      enabled: true
