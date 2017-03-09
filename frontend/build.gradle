@@ -11,29 +11,14 @@ node {
   download = true
 }
 
-def jsBuildDir = project.buildDir.absolutePath + '/dist'
-
-//jar {
-//  from jsBuildDir
-//  eachFile { details ->
-//    details.path = details.path.startsWith('META-INF') ?: 'static/'+details.path
-//  }
-//  // Jar contains duplicate empty folders, see Gradle issue:
-//  // http://issues.gradle.org/browse/GRADLE-1830
-//  // so we need to set includeEmptyDirs to false
-//  includeEmptyDirs = false
-//
-//}
+def jsBuildDir = project.projectDir.absolutePath + '/dist'
 
 task npmBuild(dependsOn: npmInstall, type: NpmTask) {
   args = ["run", "ng", "build"]
 }
 
 task copyStaticFiles(dependsOn: npmBuild, type: Copy) {
-  println jsBuildDir
   from jsBuildDir
-  into '../backend/build/resources/main/static/'
+  into project.projectDir.absolutePath + '/backend/build/resources/main/static/'
 }
-
-//jar.dependsOn npmBuild
 processResources.dependsOn copyStaticFiles
