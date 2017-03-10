@@ -17,11 +17,4 @@ public class HomeController {
 
         return "index.html";
     }
-
-    @GetMapping("/a")
-    @ResponseBody
-    public String abc() {
-
-        return "sadf";
-    }
 }

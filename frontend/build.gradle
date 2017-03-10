@@ -17,7 +17,7 @@ task npmBuild(dependsOn: npmInstall, type: NpmTask) {
   args = ["run", "ng", "build"]
 }
 
-processResources.dependsOn npmBuild
+//processResources.dependsOn npmBuild
 
 task watch(dependsOn: npmInstall, type: NpmTask) {
   args = ["run", "ng", "build", "--watch"]
