@@ -17,9 +17,8 @@ task npmBuild(dependsOn: npmInstall, type: NpmTask) {
   args = ["run", "ng", "build"]
 }
 
-task copyStaticFiles(dependsOn: npmBuild, type: Copy) {
-  from jsBuildDir
-  into project.projectDir.absolutePath + '/../backend/build/resources/main/static/'
-}
+processResources.dependsOn npmBuild
 
-processResources.dependsOn copyStaticFiles
+task watch(dependsOn: npmInstall, type: NpmTask) {
+  args = ["run", "ng", "build", "--watch"]
+}
