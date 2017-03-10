@@ -1,3 +1,54 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'pub'
+    version = '0.0.1-SNAPSHOT'
+}
+
+war {
+    baseName = 'pub'
+    version = '0.0.1-SNAPSHOT'
+}
+
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+
+dependencies {
+    compile project(':frontend')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-webflux')
+    runtime('org.springframework.boot:spring-boot-devtools')
+
+    compile("org.springframework.boot:spring-boot-starter-tomcat")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
 task wrapper(type: Wrapper) {
     gradleVersion = '3.4.1'
 }

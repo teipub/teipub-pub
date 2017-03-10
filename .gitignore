@@ -5,6 +5,7 @@ build/
 frontend/node_modules
 pub.mv.db
 pub.trace.db
+backend/src/main/resources/rebel.xml
 
 ### IntelliJ IDEA ###
 .idea

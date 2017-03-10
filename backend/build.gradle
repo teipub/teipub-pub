@@ -1,47 +1,20 @@
 buildscript {
-	ext {
-		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
-	}
-	repositories {
-		mavenCentral()
-		maven { url "https://repo.spring.io/snapshot" }
-		maven { url "https://repo.spring.io/milestone" }
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
-}
-
-apply plugin: 'idea'
-apply plugin: 'java'
-apply plugin: 'war'
-apply plugin: 'org.springframework.boot'
-
-idea {
-    module {
-        inheritOutputDirs = false
-        outputDir = file("${buildDir}/classes/main/")
+    ext {
+        springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
-jar {
-	baseName = 'pub'
-	version = '0.0.1-SNAPSHOT'
-}
 
-bootRepackage {
-    mainClass = "io.teipub.pub.PubApplication"
-}
-
-targetCompatibility = 1.8
-sourceCompatibility = 1.8
-
-repositories {
-	mavenCentral()
-	maven { url "https://repo.spring.io/snapshot" }
-	maven { url "https://repo.spring.io/milestone" }
-}
-
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
 
 dependencies {
     compile project(':frontend')
@@ -52,4 +25,26 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-tomcat")
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+bootRepackage {
+    mainClass = "io.teipub.pub.PubApplication"
+}
+
+
+tasks.withType(JavaCompile) {
+    options.incremental = true
 }
