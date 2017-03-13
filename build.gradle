@@ -67,6 +67,15 @@ allprojects {
     }
 }
 
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+
+
 springBoot {
     mainClass = 'io.teipub.pub.PubApplication'
 }
