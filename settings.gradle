@@ -1,3 +1,0 @@
-include 'frontend', 'backend'
-
-rootProject.name= 'teipub-pub'
