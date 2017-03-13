@@ -1,8 +1,7 @@
-
 server:
   undertow:
     accesslog:
-      enabled: true
+        enabled: true
   error:
     whitelabel:
       enabled: false
