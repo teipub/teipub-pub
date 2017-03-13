@@ -74,7 +74,9 @@ idea {
     }
 }
 
-
+bootRun {
+    addResources = true
+}
 
 springBoot {
     mainClass = 'io.teipub.pub.PubApplication'
