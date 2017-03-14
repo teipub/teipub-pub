@@ -1,6 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 343:
+/***/ 412:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9,20 +9,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 343;
+webpackEmptyContext.id = 412;
 
 
 /***/ }),
 
-/***/ 344:
+/***/ 413:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(500);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__(524);
 
 
 
@@ -35,7 +35,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 452:
+/***/ 523:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54,12 +54,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'app works!';
+        this.model = 1;
     }
     AppComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(608),
-            styles: [__webpack_require__(606)]
+            template: __webpack_require__(679),
+            styles: [__webpack_require__(677)]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -69,15 +70,16 @@ var AppComponent = (function () {
 
 /***/ }),
 
-/***/ 453:
+/***/ 524:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(422);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_bootstrap_ng_bootstrap__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(523);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -93,21 +95,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */]
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_4__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
             ],
             providers: [],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
@@ -117,7 +121,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 454:
+/***/ 525:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -133,10 +137,10 @@ var environment = {
 
 /***/ }),
 
-/***/ 606:
+/***/ 677:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(217)();
+exports = module.exports = __webpack_require__(244)();
 // imports
 
 
@@ -151,20 +155,20 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 608:
+/***/ 679:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>\n  {{title}}\n</h1>\n"
+module.exports = "<h1>\n  {{title}}\n</h1>\n<div [(ngModel)]=\"model\" ngbRadioGroup name=\"radioBasic\">\n  <label class=\"btn btn-primary\">\n    <input type=\"radio\" [value]=\"1\"> Left (pre-checked)\n  </label>\n  <label class=\"btn btn-primary\">\n    <input type=\"radio\" value=\"middle\"> Middle\n  </label>\n  <label class=\"btn btn-primary\">\n    <input type=\"radio\" [value]=\"false\"> Right\n  </label>\n</div>\n<hr>\n<pre>{{model}}</pre>\n"
 
 /***/ }),
 
-/***/ 621:
+/***/ 695:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(344);
+module.exports = __webpack_require__(413);
 
 
 /***/ })
 
-},[621]);
+},[695]);
 //# sourceMappingURL=main.bundle.js.map
