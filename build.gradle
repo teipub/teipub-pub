@@ -82,6 +82,7 @@ bootRun {
 springBoot {
     mainClass = 'io.teipub.pub.PubApplication'
 }
+
 bootRepackage{
     enabled = false
     mainClass = 'io.teipub.pub.PubApplication'
