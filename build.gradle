@@ -50,23 +50,6 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-allprojects {
-    apply plugin: 'java'
-
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-
-    repositories {
-        mavenCentral()
-        maven { url "https://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/milestone" }
-    }
-
-    tasks.withType(JavaCompile) {
-        options.incremental = true
-    }
-}
-
 idea {
     module {
         inheritOutputDirs = false
@@ -105,3 +88,8 @@ task npmBuild(dependsOn: npmInstall, type: Exec) {
 task watch(dependsOn: npmInstall, type: Exec) {
     commandLine "node_modules/.bin/ng", "build", "--watch"
 }
+
+tasks.withType(JavaCompile) {
+    options.incremental = true
+}
+
