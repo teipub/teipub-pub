@@ -75,7 +75,7 @@ sourceSets {
 
     main {
         java {
-            srcDirs += "${buildDir}/generated/source/kapt/main"
+            srcDirs += "src/generated/java"
         }
     }
 }
