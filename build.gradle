@@ -6,7 +6,6 @@ buildscript {
         mavenCentral()
         maven { url "https://repo.spring.io/snapshot" }
         maven { url "https://repo.spring.io/milestone" }
-        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -18,8 +17,9 @@ plugins {
     id 'org.gradle.wrapper'
     id 'org.gradle.java'
     id 'org.gradle.war'
-    id 'com.ewerk.gradle.plugins.annotation-processor' version '1.0.2'
+//    id 'com.ewerk.gradle.plugins.annotation-processor' version '1.0.2'
     id 'com.moowork.node' version '1.1.1'
+    id "com.ewerk.gradle.plugins.querydsl" version "1.0.8"
 }
 
 apply plugin: 'org.springframework.boot'
@@ -60,24 +60,15 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-annotationProcessor {
-    library  'com.querydsl:querydsl-apt:4.1.4'
-    processor 'com.querydsl.apt.jpa.JPAAnnotationProcessor'
-}
+//annotationProcessor {
+//    library  'com.querydsl:querydsl-apt:4.1.4'
+//    processor 'com.querydsl.apt.QuerydslAnnotationProcessor'
+//}
 
 
 sourceSets {
-    generated {
-        java {
-            srcDirs += "src/main/java"
-        }
-    }
-
-    main {
-        java {
-            srcDirs += "src/generated/java"
-        }
-    }
+    generated.java.srcDirs += "src/main/java"
+    main.java.srcDirs += "src/generated/java"
 }
 
 
@@ -100,6 +91,11 @@ springBoot {
 bootRepackage{
     enabled = false
     mainClass = 'io.teipub.pub.PubApplication'
+}
+
+querydsl {
+//    library 'com.querydsl:querydsl-apt:4.1.3'
+    jpa true
 }
 
 wrapper {
