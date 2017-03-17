@@ -18,7 +18,8 @@ public class HomeController {
     private PostRepository postRepository;
 
     @GetMapping("/")
+    @ResponseBody
     public String home() {
-        return "index.html";
+        return "static html";
     }
 }
