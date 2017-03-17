@@ -39,23 +39,31 @@
   <div class="button-row">
     <button md-button>Flat button</button>
     <button md-raised-button>Raised button</button>
-    <button md-fab><md-icon>check</md-icon></button>
-    <button md-mini-fab><md-icon>check</md-icon></button>
+    <button md-fab>
+      <md-icon>check</md-icon>
+    </button>
+    <button md-mini-fab>
+      <md-icon>check</md-icon>
+    </button>
   </div>
 
   <h3>Link Buttons</h3>
   <div class="example-button-row">
     <a md-button routerLink=".">Flat button</a>
     <a md-raised-button routerLink=".">Raised button</a>
-    <a md-fab routerLink="."><md-icon>check</md-icon></a>
-    <a md-mini-fab routerLink="."><md-icon>check</md-icon></a>
+    <a md-fab routerLink=".">
+      <md-icon>check</md-icon>
+    </a>
+    <a md-mini-fab routerLink=".">
+      <md-icon>check</md-icon>
+    </a>
   </div>
 </div>
 <div class="containerX">
-  <div [fxLayout]="direction" (click)="toggleDirection()" class="colored box" >
-    <div fxFlex="20">  fxFlex="20"  </div>
-    <div fxFlex="60">  fxFlex="60"  </div>
-    <div fxFlex >      fxFlex       </div>
+  <div [fxLayout]="direction" (click)="toggleDirection()" class="colored box">
+    <div fxFlex="20"> fxFlex="20"</div>
+    <div fxFlex="60"> fxFlex="60"</div>
+    <div fxFlex> fxFlex</div>
   </div>
 </div>
 <md-sidenav-container class="example-container">
