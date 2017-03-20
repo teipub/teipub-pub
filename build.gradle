@@ -44,6 +44,11 @@ repositories {
     maven { url "https://repo.spring.io/milestone" }
 }
 
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
@@ -53,18 +58,12 @@ dependencies {
     compile("com.querydsl:querydsl-jpa:4.1.4")
 
 
-    compile("org.springframework.boot:spring-boot-starter-tomcat")
+    compile("org.springframework.boot:spring-boot-starter-undertow")
     runtime('org.springframework.boot:spring-boot-devtools')
     runtime('com.h2database:h2')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
-
-//annotationProcessor {
-//    library  'com.querydsl:querydsl-apt:4.1.4'
-//    processor 'com.querydsl.apt.QuerydslAnnotationProcessor'
-//}
-
 
 sourceSets {
     generated.java.srcDirs += "src/main/java"
