@@ -5,12 +5,15 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
+import { PostComponent } from './post.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +21,11 @@ import { AppComponent } from './app.component';
     HttpModule,
     NgbModule.forRoot(),
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule.forRoot([
+    { path: 'admin', component: AppComponent},
+    { path: 'admin/post', component: PostComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
