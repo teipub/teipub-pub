@@ -10,12 +10,14 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
+import { WriteComponent } from "./write.component";
 import { PostComponent } from './post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    WriteComponent,
     PostComponent
   ],
   imports: [
@@ -27,6 +29,7 @@ import { PostComponent } from './post.component';
     FlexLayoutModule,
     RouterModule.forRoot([
     { path: '', component: HomeComponent},
+    { path: 'write', component: WriteComponent},
     { path: 'post', component: PostComponent},
     { path: '**', component: HomeComponent}
     ], {useHash: true})
