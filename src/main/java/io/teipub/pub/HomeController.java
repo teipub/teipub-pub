@@ -17,8 +17,12 @@ public class HomeController {
     @Autowired
     private PostRepository postRepository;
 
-    @GetMapping("/")
-    public String home() {
+    @GetMapping("/admin")
+    public String admin() {
         return "index.html";
     }
+
+    @GetMapping("/")
+    @ResponseBody
+    public String home() { return "static html"; }
 }
