@@ -28,7 +28,7 @@ import { PostComponent } from './post.component';
     RouterModule.forRoot([
     { path: '', component: HomeComponent},
     { path: 'post', component: PostComponent},
-    { path: '**', component: AppComponent}
+    { path: '**', component: HomeComponent}
     ], {useHash: true})
   ],
   bootstrap: [AppComponent],
