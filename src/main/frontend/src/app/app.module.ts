@@ -6,13 +6,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { RouterModule } from '@angular/router'
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home.component';
 import { PostComponent } from './post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     PostComponent
   ],
   imports: [
@@ -23,12 +26,13 @@ import { PostComponent } from './post.component';
     MaterialModule,
     FlexLayoutModule,
     RouterModule.forRoot([
-    { path: 'admin', component: AppComponent},
-    { path: 'admin/post', component: PostComponent}
-    ])
+    { path: '', component: HomeComponent},
+    { path: 'post', component: PostComponent},
+    { path: '**', component: AppComponent}
+    ], {useHash: true})
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [{provide: APP_BASE_HREF, useValue : '/' }]
 })
 export class AppModule {
 }

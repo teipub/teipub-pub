@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+        springBootVersion = '1.5.2.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -17,7 +17,6 @@ plugins {
     id 'org.gradle.wrapper'
     id 'org.gradle.java'
     id 'org.gradle.war'
-//    id 'com.ewerk.gradle.plugins.annotation-processor' version '1.0.2'
     id 'com.moowork.node' version '1.1.1'
     id "com.ewerk.gradle.plugins.querydsl" version "1.0.8"
 }
@@ -52,7 +51,7 @@ configurations {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-webflux')
+//    compile('org.springframework.boot:spring-boot-starter-webflux')
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile("com.querydsl:querydsl-jpa:4.1.4")
